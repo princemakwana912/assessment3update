@@ -1,0 +1,20 @@
+.heading-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.search-add-btns{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.add-container{
+    background-color: red;
+}
+
+.a-tag{
+    text-decoration: none;
+    color: white;
+}

@@ -1,0 +1,71 @@
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 40px;
+    background-color: aquamarine;
+    padding: 0px 160px;
+    align-items: center;
+}
+
+
+/* Form starts here */
+
+/* main div container starts here */
+.div-container{
+    display: flex;
+    background-color: aqua;
+    flex-direction: column;
+}
+
+h5{
+    margin-top: 20px;
+    margin-left: 270px;
+    margin-bottom: 10px;
+}
+
+/* form container here */
+.form-container{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border: 1px solid red;
+    padding: 15px 30px;
+    width: 900px;
+}
+
+/* form row here */
+.form-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* form status here */
+.form-status{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+/* form control and select here */
+.form-control,.form-select{
+    min-width: 405px ;
+}
+
+/* form btns here */
+.form-btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 10px;
+}
+
+/* setting btns */
+.btn{
+    width: 120px;
+}
+
+
+/* main div container ends here */

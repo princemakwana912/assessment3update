@@ -1,0 +1,30 @@
+{
+  "posts": [
+    {
+      "id": 2,
+      "firstName": "dfvxc",
+      "lastName": "xcvxcvx",
+      "email": "xxcvxc@gmail.com",
+      "department": "Success",
+      "address": "feffdgsd",
+      "phnumber": 4323423423423,
+      "description": "fvfxdfsdfsd",
+      "password": "1234567",
+      "confpassword": "1234567",
+      "status": "active"
+    },
+    {
+      "id": 5,
+      "firstName": "Prince",
+      "lastName": "Makwana",
+      "email": "abc@gmail.com",
+      "department": "department",
+      "address": "Valsad",
+      "phnumber": 8989898989,
+      "description": "Hello",
+      "password": "12345678",
+      "confpassword": "12345678",
+      "status": "In Active"
+    }
+  ]
+}

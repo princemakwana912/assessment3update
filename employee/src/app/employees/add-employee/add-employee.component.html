@@ -1,0 +1,149 @@
+<!-- navbar of core -->
+<nav>
+    <div>
+        <span>
+            Brand Logo
+        </span>
+    </div>
+    <div>
+        <span>
+            Luis Allen
+        </span>
+    </div>
+</nav>
+
+
+<!-- form of component add employee -->
+
+<div class="div-container">
+    <h5>Add Employee</h5>
+    <form class="form-container" [formGroup]="forms" (ngSubmit)="onSubmit()">
+
+        <div class="form-row">
+            <div class="mb-3 ">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" formControlName="firstName"
+                    [ngClass]="{'is-invalid': submitted && fm['firstName'].errors }">
+                <div *ngIf="submitted && fm['firstName'].errors" class="invalid-feedback">
+                    <div *ngIf="fm['firstName'].errors['required']">First Name is Required</div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" formControlName="lastName"
+                    [ngClass]="{'is-invalid': submitted && fm['lastName'].errors }">
+                <div *ngIf="submitted && fm['lastName'].errors" class="invalid-feedback">
+                    <div *ngIf="fm['lastName'].errors['required']">Last Name is Required</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" formControlName="email"
+                    [ngClass]="{'is-invalid': submitted && fm['email'].errors }">
+                <div *ngIf="submitted && fm['email'].errors" class="invalid-feedback">
+                    <div *ngIf="fm['email'].errors['required']">Email is Required</div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="department" class="form-label">Department</label><sup>*</sup>
+                <select name="department" formControlName="department" class="form-select"
+                    [ngClass]="{'is-invalid': submitted && fm['department'].errors }">
+                    <option value="Frontend">Frontend</option>
+                    <option id="0" value="Backend">Backend</option>
+                    <option id="1" value="QA">QA</option>
+                    <option id="2" value="BA">BA</option>
+                </select>
+                <div *ngIf="submitted && fm['department'].errors" class="invalid-feedback">
+                    <div *ngIf="fm['department'].errors['required']">Department is Required</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" formControlName="address" placeholder="Enter Address" class="form-control"
+                    [ngClass]="{'is-invalid': submitted && fm['address'].errors }">
+                <div *ngIf="submitted && fm['address'].errors" class="invalid-feedback">
+                    <div *ngIf="fm['address'].errors['required']">Address is Required</div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="phnumber" class="form-label">Contact Number</label>
+                <input type="number" class="form-control" formControlName="phnumber"
+                    [ngClass]="{'is-invalid': submitted && fm['phnumber'].errors }">
+                <div *ngIf="submitted && fm['phnumber'].errors" class="invalid-feedback">
+                    <div *ngIf="fm['phnumber'].errors['required']">Number is Required</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label><sup>*</sup>
+            <textarea class="form-control" formControlName="description" rows="3"
+                [ngClass]="{'is-invalid': submitted && fm['description'].errors }"></textarea>
+            <div *ngIf="submitted && fm['description'].errors" class="invalid-feedback">
+                <div *ngIf="fm['description'].errors['required']">Description is Required</div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label><sup>*</sup><br>
+                <input type="password" formControlName="password" placeholder="Enter Password" class="form-control"
+                    [ngClass]="{'is-invalid': submitted && fm['password'].errors }">
+                <div *ngIf="submitted && fm['password'].errors" class="invalid-feedback">
+                    <div *ngIf="fm['password'].errors['required']">Password is Required</div>
+                    <div *ngIf="fm['password'].errors['minlength']">Password must be atleast 6 characters </div>
+                    <div *ngIf="fm['password'].errors['maxlength']">Password must be atmost 25 characters</div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="confpassword" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" formControlName="confpassword"
+                    [ngClass]="{'is-invalid': submitted && fm['confpassword'].errors }">
+                <div *ngIf="submitted && fm['confpassword'].errors" class="invalid-feedback">
+                    <div *ngIf="fm['confpassword'].errors['required']">Password is Required</div>
+                    <div *ngIf="fm['confpassword'].errors['minlength']">Password must be atleast 6 characters </div>
+                    <div *ngIf="fm['confpassword'].errors['maxlength']">Password must be atmost 25 characters</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+
+            <label for="status" class="form-label">Status</label><br>
+
+
+            <input class="form-check-input" type="radio" name="status" id="active" value="active" required
+                formControlName="status">
+            <label class="form-check-label" for="active">
+                Active
+            </label>
+
+
+            <input class="form-check-input" type="radio" name="status" id="inactive" value="In Active" 
+                formControlName="status">
+            <label class="form-check-label" for="inactive">
+                Inactive
+            </label>
+
+            <div *ngIf="submitted && fm['status'].errors" class="invalid-feedback">
+                <div *ngIf="fm['status'].errors['required']">Status is Required</div>
+            </div>
+
+        </div>
+
+        <div class="form-btns">
+            <button type="button" (click)="onReset()" class="btn btn-danger">Cancel</button>
+            <button type="submit" [routerLink]="['/list']"   (click)="addEmployeeDetails()" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
